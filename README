@@ -1,1 +1,22 @@
-this is a README
+This is a baseline simulation setup to test the impedance simulator.
+    ngtest.c() provides function definitions to run a spice simulation and retrieve values
+    a lot of these functions are at least partially created by chat so use at your own risk
+    ngtest.c() provides the following function definitions:
+
+        config(): runs spice sim for an RL circuit and saves results to the global vectors, might add argument parsing 
+        to make switching between simulated circuits easier, but right now it just runs one hard-coded one
+
+        print(): prints the saved data vectors + current to a text file
+
+        get_VL(time): returns voltage across the inductor at given time in seconds 
+
+        double get_vin(time): returns input voltage at given time in seconds 
+
+        double get_current(time): returns current through the inductor (through system in this case) at 
+        given time in microseconds
+
+    difeq.c provides a function (iterate_difeq) definition for an iteratable approximation for the differential equation for an RL circuit
+    this serves as a proof of concept for something that can be translated into RTL
+
+    run_test.c: provides a main function that iterates the differential equation function and compares values to the 
+    values from the spice sim.  
