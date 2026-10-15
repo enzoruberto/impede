@@ -1,7 +1,7 @@
-#include <cstdint>
-#include <print>
 #include <array>
 #include <cmath>
+#include <cstdint>
+#include <print>
 #include <random>
 
 #include "Capacitor.hpp"
